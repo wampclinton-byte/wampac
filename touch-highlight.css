@@ -1,0 +1,21 @@
+/* ── Touch highlight: the card under the finger gets a bold green border ── */
+html body #listings-grid .wp-card,
+html body #sales-grid .wp-card { -webkit-tap-highlight-color: transparent; }
+html body #page-listings .listing-card.wp-card,
+html body #page-sales .sales-card.wp-card {
+  transition: transform .25s cubic-bezier(.22,.9,.3,1), box-shadow .18s ease, border-color .18s ease;
+}
+html body #page-listings .listing-card.wp-card.is-touched,
+html body #page-sales .sales-card.wp-card.is-touched,
+html body #page-listings .listing-card.wp-card:active,
+html body #page-sales .sales-card.wp-card:active {
+  border-color: #22A45D !important;
+  box-shadow:
+    0 0 0 3px #22A45D,
+    0 0 0 7px rgba(34,164,93,.28),
+    0 14px 30px -10px rgba(20,120,70,.38) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #page-listings .listing-card.wp-card,
+  html body #page-sales .sales-card.wp-card { transition: none !important; }
+}
